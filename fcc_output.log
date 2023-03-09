@@ -1,0 +1,135 @@
+logging username: fcc_test_16774962942
+logging new user...{
+  username: 'fcc_test_16774962942',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fe61281a1c45de7d54b"),
+  __v: 0
+}
+logging username: fcc_test_16774962957
+logging new user...{
+  username: 'fcc_test_16774962957',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fe71281a1c45de7d54e"),
+  __v: 0
+}
+logging username: fcc_test_16774962984
+logging new user...{
+  username: 'fcc_test_16774962984',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fea1281a1c45de7d554"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774962996
+logging new user...{
+  username: 'fcc_test_16774962996',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8feb1281a1c45de7d557"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963008
+logging new user...{
+  username: 'fcc_test_16774963008',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fec1281a1c45de7d55a"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963021
+logging new user...{
+  username: 'fcc_test_16774963021',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fed1281a1c45de7d55d"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963033
+logging new user...{
+  username: 'fcc_test_16774963033',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8fef1281a1c45de7d560"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963045
+logging new user...{
+  username: 'fcc_test_16774963045',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8ff01281a1c45de7d563"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963057
+logging new user...{
+  username: 'fcc_test_16774963057',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8ff11281a1c45de7d566"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963070
+logging new user...{
+  username: 'fcc_test_16774963070',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8ff21281a1c45de7d569"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963082
+logging new user...{
+  username: 'fcc_test_16774963082',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8ff41281a1c45de7d56c"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging username: fcc_test_16774963094
+logging new user...{
+  username: 'fcc_test_16774963094',
+  createdate: 2023-02-27T11:03:39.000Z,
+  _id: new ObjectId("63fc8ff51281a1c45de7d56f"),
+  __v: 0
+}
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+logging form data: test
+CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
+    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
+    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
+ 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+ 
+repl process died unexpectedly: 
+ 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+ 
