@@ -27,7 +27,7 @@ const createExercise = asyncHandler(async (req, res) => {
     console.log(`logging formatted date: ${formattedDate}`);
 
     // create the exercise record
-    if(username) {
+    if(username !== null && username !== undefined) {
         console.log(`found ${username} by ${userId}`);
         const exercise = await Exercise.create({
             username: username.username,
@@ -54,7 +54,7 @@ const createExercise = asyncHandler(async (req, res) => {
 // get All Exercises By User
 const getExercisesByUser = asyncHandler(async (req, res) => {
     const exercise = await Exercise.find({username: req.params.username});
-    if(exercise) {
+    if(exercise !== null && exercise !== undefined) {
         res.status(200).json(exercise);
         console.log(`Found user exercises: ${exercise}`);        
     } else {

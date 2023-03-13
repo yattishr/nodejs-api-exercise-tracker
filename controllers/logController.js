@@ -32,7 +32,7 @@ const getLogsForUser = asyncHandler(async (req, res) => {
     query.date = { $lte: toDate };
   }
 
-  if (username) {
+  if (username !== null && username !== undefined) {
     console.log(`logging username...${username.username}`);
     const exercises = await Exercise.find(query)
       .limit(limitNum)
