@@ -17,15 +17,13 @@ const createUser = asyncHandler(async (req, res) => {
     const username = req.body.username;
     console.log(`logging username: ${username}`);
     if(!username) {
-        res.status(400)
-        throw new Error('Username cannot be blank.')
+        res.status(400).type("text").send('Username cannot be blank')
     }
 
     // check if user already exists
     const userExists = await User.findOne({ username })
     if(userExists) {
-        res.status(400)
-        throw new Error(`${username} already exists.`)
+        res.status(400).type("text").send(`${username} already exists`)
     }
 
     const user = await User.create({
@@ -39,8 +37,7 @@ const createUser = asyncHandler(async (req, res) => {
             id: user._id
         })
     } else {
-        res.status(400)
-        throw new Error('Username data is not valid.')
+        res.status(400).type("text").send('Username data is not valid.');
     }
 })
 
@@ -50,19 +47,15 @@ const getUserById = asyncHandler(async (req, res) => {
 
     // check if userId field is a valid Mongo ObjectId.
     if(!mongoose.Types.ObjectId.isValid(userId) || !userId) {
-        res.status(400)
-        throw new Error('Invalid User Id field. User Id field cannot be a String or empty.');
+        res.status(400).type("text").send("Invalid User Id field. User Id field cannot be a String or empty");        
     }
 
-    console.log(`getting users by id...${userId}`);
-    const users = await User.findById({_id: userId});
-    console.log(`logging users data from getUserById...${users}`);
-
-    if(users) {
-        res.status(200).json(users);
+    // find User with id
+    const user = await User.findById({_id: userId});
+    if(user !== null && user !== undefined) {
+        res.status(200).json(user);
     } else {
-        res.status(404);
-        throw new Error('Username cannot be found.');
+        res.status(400).type("text").send("Username cannot be found");
     }
 })
 
@@ -72,7 +65,6 @@ const getAllUsers = asyncHandler(async(req, res) => {
         res.status(200).json(users);
     } else {
         res.status(400);
-        throw new Error('Cannot get Users.');
     }
 })
 

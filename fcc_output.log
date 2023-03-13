@@ -1,135 +1,144 @@
-logging username: fcc_test_16774962942
+Hint: hit control+c anytime to enter REPL.
+(node:22) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Your app is listening on port 3000
+Successfully connected to MongoDB!
+logging username...aishwariyarb
+found 0 exercises for that user.
+Found user exercises: [object Object]
+logging username...kritis
+found 7 exercises for that user.
+Found user exercises: [object Object]
+logging username...kritis
+found 3 exercises for that user.
+Found user exercises: [object Object]
+logging username...kritis
+found 7 exercises for that user.
+Found user exercises: [object Object]
+logging username...kritis
+found 7 exercises for that user.
+Found user exercises: [object Object]
+logging username field userRoutes: fcc_test_16784427296
+logging username: fcc_test_16784427296
 logging new user...{
-  username: 'fcc_test_16774962942',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fe61281a1c45de7d54b"),
+  username: 'fcc_test_16784427296',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00eab22ca904410b2cb2"),
   __v: 0
 }
-logging username: fcc_test_16774962957
+logging username field userRoutes: fcc_test_16784427310
+logging username: fcc_test_16784427310
 logging new user...{
-  username: 'fcc_test_16774962957',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fe71281a1c45de7d54e"),
+  username: 'fcc_test_16784427310',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00ebb22ca904410b2cb5"),
   __v: 0
 }
-logging username: fcc_test_16774962984
+logging username field userRoutes: fcc_test_16784427337
+logging username: fcc_test_16784427337
 logging new user...{
-  username: 'fcc_test_16774962984',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fea1281a1c45de7d554"),
+  username: 'fcc_test_16784427337',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00eeb22ca904410b2cbb"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774962996
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427349
+logging username: fcc_test_16784427349
 logging new user...{
-  username: 'fcc_test_16774962996',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8feb1281a1c45de7d557"),
+  username: 'fcc_test_16784427349',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00efb22ca904410b2cbe"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963008
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427361
+logging username: fcc_test_16784427361
 logging new user...{
-  username: 'fcc_test_16774963008',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fec1281a1c45de7d55a"),
+  username: 'fcc_test_16784427361',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f0b22ca904410b2cc1"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963021
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427374
+logging username: fcc_test_16784427374
 logging new user...{
-  username: 'fcc_test_16774963021',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fed1281a1c45de7d55d"),
+  username: 'fcc_test_16784427374',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f1b22ca904410b2cc4"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963033
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427386
+logging username: fcc_test_16784427386
 logging new user...{
-  username: 'fcc_test_16774963033',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8fef1281a1c45de7d560"),
+  username: 'fcc_test_16784427386',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f3b22ca904410b2cc7"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963045
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427398
+logging username: fcc_test_16784427398
 logging new user...{
-  username: 'fcc_test_16774963045',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8ff01281a1c45de7d563"),
+  username: 'fcc_test_16784427398',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f4b22ca904410b2cca"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963057
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427410
+logging username: fcc_test_16784427410
 logging new user...{
-  username: 'fcc_test_16774963057',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8ff11281a1c45de7d566"),
+  username: 'fcc_test_16784427410',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f5b22ca904410b2ccd"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963070
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427422
+logging username: fcc_test_16784427422
 logging new user...{
-  username: 'fcc_test_16774963070',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8ff21281a1c45de7d569"),
+  username: 'fcc_test_16784427422',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f6b22ca904410b2cd0"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963082
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427435
+logging username: fcc_test_16784427435
 logging new user...{
-  username: 'fcc_test_16774963082',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8ff41281a1c45de7d56c"),
+  username: 'fcc_test_16784427435',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f7b22ca904410b2cd3"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging username: fcc_test_16774963094
+logging input paramter: undefined
+logging username field userRoutes: fcc_test_16784427447
+logging username: fcc_test_16784427447
 logging new user...{
-  username: 'fcc_test_16774963094',
-  createdate: 2023-02-27T11:03:39.000Z,
-  _id: new ObjectId("63fc8ff51281a1c45de7d56f"),
+  username: 'fcc_test_16784427447',
+  createdate: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b00f9b22ca904410b2cd6"),
   __v: 0
 }
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
-logging form data: test
-CastError: Cast to ObjectId failed for value "{ _id: 'undefined' }" (type Object) at path "_id" for model "User"
-    at model.Query.exec (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:4927:21)
-    at Query.then (/home/runner/boilerplate-project-exercisetracker/node_modules/mongoose/lib/query.js:5026:15)
- 
-(To exit, press Ctrl+C again or Ctrl+D or type .exit)
- 
-repl process died unexpectedly: 
- 
-(To exit, press Ctrl+C again or Ctrl+D or type .exit)
- 
+logging input paramter: undefined
+logging input paramter: undefined
+logging input paramter: 640b00f9b22ca904410b2cd6
+logging formatted date: Fri Mar 10 2023
+found {
+  _id: new ObjectId("640b00f9b22ca904410b2cd6"),
+  username: 'fcc_test_16784427447',
+  createdate: 2023-03-10T00:00:00.000Z,
+  __v: 0
+} by 640b00f9b22ca904410b2cd6
+Successfully created Exercise record: {
+  username: 'fcc_test_16784427447',
+  description: 'test',
+  duration: 15,
+  date: 2023-03-10T00:00:00.000Z,
+  _id: new ObjectId("640b02f5b22ca904410b2cd9"),
+  __v: 0
+}
+Found user exercises: 

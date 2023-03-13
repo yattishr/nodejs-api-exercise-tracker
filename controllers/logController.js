@@ -17,8 +17,7 @@ const getLogsForUser = asyncHandler(async (req, res) => {
 
   // check if userId field is a valid Mongo ObjectId.
   if (!mongoose.Types.ObjectId.isValid(userId) || !userId) {
-    res.status(400);
-    throw new Error("User Id field cannot be a String or empty.");
+    res.status(400).type("text").send("User Id field cannot be a String or empty");
   }
 
   const username = await User.findById({ _id: userId });
@@ -60,7 +59,7 @@ const getLogsForUser = asyncHandler(async (req, res) => {
         console.log("Could not find any exercises with that user.", err);
       });
   } else {
-    res.status(404).type("txt").send("User Not Found.");
+    res.status(404).type("txt").send("User Not Found");
     console.log("Could not find any users with that username.");
   }
 });

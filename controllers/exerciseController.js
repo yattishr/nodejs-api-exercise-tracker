@@ -15,8 +15,7 @@ const createExercise = asyncHandler(async (req, res) => {
 
     // check if userId field is a valid Mongo ObjectId.
     if(!mongoose.Types.ObjectId.isValid(userId) || !userId) {
-        res.status(400)
-        throw new Error('User Id field cannot be a String or empty.');
+        res.status(400).type("text").send('User Id field cannot be a String or empty');
     }
 
     // get the username from the UserId.

@@ -27,22 +27,6 @@ const connectionStatus = connectMongo();
 // Users API endpoint.
 app.use("/api/users", userRoutes);
 
-// Respond not found to all the wrong routes
-// app.use(function (req, res, next) {
-//   res.status(404);
-//   res.type("txt").send("We are sorry, but that URL was Not found.");
-// });
-
-// Error Middleware
-app.use(function (err, req, res, next) {
-  if (err) {
-    res
-      .status(err.status || 500)
-      .type("txt")
-      .send(err.message || "SERVER ERROR");
-  }
-});
-
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
