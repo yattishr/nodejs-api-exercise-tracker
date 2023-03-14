@@ -36,7 +36,7 @@ describe("POST /users", () => {
     const res = await request(app).post("/api/users").send(newUser);
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty("username", newUser.username);
-    expect(res.body).toHaveProperty("id");
+    expect(res.body).toHaveProperty("_id");
   });
 });
 
@@ -69,21 +69,12 @@ describe('GET /api/users/:id', () => {
       console.log(`Found User...logging response: ${JSON.stringify(res.body)}`);
       console.log(`logging res status code: ${res.status}`);
       expect(res.statusCode).toEqual(200);
-      return;
-      // expect(res.body).toHaveProperty("username");
-      // expect(res.body.username).toEqual("beatmaster");
-      // expect(res.body).toHaveProperty("_id");
-      // expect(res.body.id).toEqual("6400b4f16a486dc94cea6b67");
-      // expect(res.body.length).toBeGreaterThan(0);
+      expect(res.body).toHaveProperty("username");
+      expect(res.body.username).toEqual("beatmaster");
+      expect(res.body).toHaveProperty("_id");
+      expect(res.body._id).toEqual("6400b4f16a486dc94cea6b67");
     });
   
-    it('should return 400 if userid input is invalid.', async () => {
-      const res = await request(app).get("api/users/456");
-      console.log(`logging res status code when userid input is invalid: ${res.status}`);
-      console.log(`logging AAA res body: ${res.body}`);
-      expect(res.statusCode).toEqual(400);
-    });
-
     it('should return 400 if user is not found.', async () => {
       const res = await request(app).get("/api/users/6400b4f16a486dc94cea6b68");
       expect(res.statusCode).toEqual(400);

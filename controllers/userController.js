@@ -34,7 +34,7 @@ const createUser = asyncHandler(async (req, res) => {
     if(user) {
         res.status(200).json({
             username: username,
-            id: user._id
+            _id: user._id
         })
     } else {
         res.status(400).type("text").send('Username data is not valid.');

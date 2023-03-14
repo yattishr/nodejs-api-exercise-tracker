@@ -10,6 +10,23 @@ const userSchema = mongoose.Schema({
     createdate: {
         type: Date,
         default: moment().format('YYYY MM DD'),
-    }
+    },
+    exercises: [
+        {
+            description: {
+                type: String,
+                required: [true, 'A description is required.'],
+            },
+            duration: {
+                type: Number,
+                required: [true, 'A duration is required.'],
+            },
+            date: {
+                type: Date,
+                default: Date.now,
+            }
+        }
+    ]
 })
+
 module.exports = mongoose.model('User', userSchema)
