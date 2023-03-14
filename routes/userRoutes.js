@@ -6,41 +6,22 @@ const { getLogsForUser } = require('../controllers/logController');
 
 const router = express.Router();
 
-// POST createUser /api/users/ 
-router.post('/', (req, res, next) => {
-    console.log(`logging username field userRoutes: ${req.body.username}`);
-    if(!req.body.username) {
-        res.status(400).send('Username cannot be blank');
-        return;
-    } next();
-}, createUser)
+// POST "/" createUSer
+router.post("/", createUser);
 
-// GET getUserById users by ID code.
-// router.get('/:id', (req, res, next) => {
-//     if (!req.params.id) {
-//         res.status(400).type("text").send('Invalid user ID');
-//         return;
-//     }
-//     next();
-// }, getUserById);
-
+// GET getUserById
 router.get("/:id", getUserById);
 
 // GET getAllUsers
 router.get("/", getAllUsers);
 
-//* /api/users/:id/exercises Endpoint.
-router.post('/:id/exercises', (req, res, next) => {
-    console.log(`logging input paramter: ${req.params.id}`)
-    if (!req.params.id) {
-        res.status(400).send('Invalid user ID');
-        return;
-    }
-    next();
-}, createExercise);
+// POST createExercise '/api/users/:id/exercises'
+router.post('/:id/exercises', createExercise)
 
+// GET getExercisesByUser '/:username/exercises'
 router.get('/:username/exercises', getExercisesByUser);
 
+// GET getLogsForUser '/:id/logs'
 router.get('/:id/logs', getLogsForUser);
 
 router.get('/hello', getServerMessage);

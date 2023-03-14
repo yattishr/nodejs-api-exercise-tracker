@@ -15,11 +15,6 @@ const getLogsForUser = asyncHandler(async (req, res) => {
   let toDate = req.query.toDate ? new Date(req.query.toDate) : null;
   let limitNum = req.query.limit ? req.query.limit : 0;
 
-  // check if userId field is a valid Mongo ObjectId.
-  if (!mongoose.Types.ObjectId.isValid(userId) || !userId) {
-    res.status(400).type("text").send("User Id field cannot be a String or empty");
-  }
-
   const username = await User.findById({ _id: userId });
 
   // build up the query string
@@ -31,6 +26,8 @@ const getLogsForUser = asyncHandler(async (req, res) => {
   } else if (toDate) {
     query.date = { $lte: toDate };
   }
+
+  console.log(`logging user exercises: ${username.exercises}`);
 
   if (username !== null && username !== undefined) {
     console.log(`logging username...${username.username}`);

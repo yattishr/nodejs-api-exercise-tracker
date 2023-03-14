@@ -26,18 +26,17 @@ const createUser = asyncHandler(async (req, res) => {
         res.status(400).type("text").send(`${username} already exists`)
     }
 
-    const user = await User.create({
-        username
-    })
-    console.log(`logging new user...${user}`);
-
-    if(user) {
-        res.status(200).json({
-            username: username,
-            _id: user._id
-        })
-    } else {
-        res.status(400).type("text").send('Username data is not valid.');
+    try {
+      const user = await User.create({
+          username
+      })
+      res.status(200).json({
+      username: username,
+      _id: user._id
+      })
+      console.log(`logging new user...${user}`);      
+    } catch(err) {
+      res.status(400).type("text").send('Username data is not valid.');
     }
 })
 
