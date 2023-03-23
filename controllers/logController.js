@@ -9,6 +9,40 @@ const Exercise = require("../model/exerciseModel");
 const User = require("../model/userModel");
 
 // get Logs By User
+const getLogsByUser = asyncHandler(async (req, res) => {
+  const userId = req.params.id;
+  let fromDate = req.query.fromDate ? new Date(req.query.fromDate) : null;
+  let toDate = req.query.toDate ? new Date(req.query.toDate) : null;
+  let limitNum = req.query.limit ? req.query.limit : 0;
+
+  try {
+    const logs = await User.find({ _id: userId })
+      .limit(limitNum)
+      .then((logs) => {
+        const exerciseCount = logs.length;
+        console.log(
+          `found ${exerciseCount} exercises for that user ${logs.username}.`
+        );
+        const exerciseData = {
+          username: username,
+          count: exerciseCount,
+          _id: userId,
+          log: logs.map((log) => ({
+            description: log.description,
+            duration: log.duration,
+            date: moment(log.date, "ddd MMM DD YYYY").format("ddd MMM DD YYYY"),
+          })),
+        };
+        console.log(`Found user exercises: ${exerciseData}`);
+        res.status(200).json(exerciseData);
+      });
+  } catch (error) {
+    res.status(500).send("Could not compete request");
+    console.log("Could not compete request ", error.message);
+  }
+});
+
+// get Logs By User
 const getLogsForUser = asyncHandler(async (req, res) => {
   const userId = req.params.id;
   let fromDate = req.query.fromDate ? new Date(req.query.fromDate) : null;
@@ -27,7 +61,8 @@ const getLogsForUser = asyncHandler(async (req, res) => {
     query.date = { $lte: toDate };
   }
 
-  console.log(`logging user exercises: ${username.exercises}`);
+  // res.json(username);
+  console.log(`logging user exercises: ${username[exercises]}`);
 
   if (username !== null && username !== undefined) {
     console.log(`logging username...${username.username}`);
@@ -63,6 +98,7 @@ const getLogsForUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   getLogsForUser,
+  getLogsByUser,
 };
 
 /**

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const { createUser, getUserById, getAllUsers, getServerMessage } = require('../controllers/userController');
 const { createExercise, getExercisesByUser } = require('../controllers/exerciseController');
-const { getLogsForUser } = require('../controllers/logController');
+const { getLogsForUser, getLogsByUser } = require('../controllers/logController');
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.post('/:id/exercises', createExercise)
 router.get('/:username/exercises', getExercisesByUser);
 
 // GET getLogsForUser '/:id/logs'
-router.get('/:id/logs', getLogsForUser);
+router.get('/:id/logs', getLogsByUser);
 
 router.get('/hello', getServerMessage);
 

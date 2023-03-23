@@ -14,7 +14,7 @@ const createExercise = asyncHandler(async (req, res) => {
   const userId = req.params.id;
   console.log(`logging input paramter: ${req.params.id}`);
   try {
-    // get the username from the UserId.
+    // get the user from the UserId.
     const user = await User.findById({ _id: userId });
 
     // check if date input is valid.
@@ -22,25 +22,24 @@ const createExercise = asyncHandler(async (req, res) => {
     const formattedDate = date.format("ddd MMM DD YYYY");
     console.log(`logging formatted date: ${formattedDate}`);
 
-    // create the exercise record
+    // add the exercise to the user object
     if (user !== null && user !== undefined) {
       console.log(`found ${user.username} by ${userId}`);
-      const exercise = await Exercise.create({
-        username: user.username,
+      user.exercises.push({
         description: req.body.description,
         duration: req.body.duration,
         date: formattedDate,
       });
-      user.exercises.push(exercise);
       await user.save();
       res.status(200).json(user);
-      console.log(`Successfully created Exercise record: ${exercise}`);
+      console.log(`Successfully updated User record: ${user}`);
     } else {
-      res.status(400).send("Could not find that user");
+      res.status(401).send("Could not find that user");
       console.log("Could not find that user");
     }
   } catch (error) {
-    res.status(500).send("Unable to complete request");  
+    res.status(500).send("Unable to complete request.");
+    return;
   }
 });
 
@@ -60,3 +59,11 @@ module.exports = {
   createExercise,
   getExercisesByUser,
 };
+
+/**
+ * TO DO:
+ * 1. Fix date formatting. When saving & sending the dates from Exercises the date MUST be formatted as: "Mon Jan 01 1990"
+ * 2. Fix the Logs API endpoint to send back the data as requested from the USERS collection
+ * 3. Logs API endpoint should include limit, from & to query parameters
+ * 4. Add additional Test cases to the Exercises Jest
+ */

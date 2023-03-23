@@ -22,7 +22,7 @@ const userSchema = mongoose.Schema({
                 required: [true, 'A duration is required.'],
             },
             date: {
-                type: Date,
+                type: String,
                 default: Date.now,
             }
         }
