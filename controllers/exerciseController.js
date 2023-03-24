@@ -31,14 +31,27 @@ const createExercise = asyncHandler(async (req, res) => {
         date: formattedDate,
       });
       await user.save();
-      res.status(200).json(user);
+      // res.status(200).json(user);
+
+      res.status(200).json({
+        _id: user._id,
+        username: user.username,
+        exercises: user.exercises.map((exercise) => ({
+          _id: exercise._id,
+          description: exercise.description,
+          duration: exercise.duration,
+          date: moment(exercise.date, "ddd MMM DD YYYY").format(
+            "ddd MMM DD YYYY"
+          ),
+        })),
+      });
       console.log(`Successfully updated User record: ${user}`);
     } else {
       res.status(401).send("Could not find that user");
       console.log("Could not find that user");
     }
   } catch (error) {
-    res.status(500).send("Unable to complete request.");
+    res.status(500).send(error.message, " : Unable to complete request.");
     return;
   }
 });
@@ -62,7 +75,7 @@ module.exports = {
 
 /**
  * TO DO:
- * 1. Fix date formatting. When saving & sending the dates from Exercises the date MUST be formatted as: "Mon Jan 01 1990"
+ * 1. Fix date formatting. When saving & sending the dates from Exercises the date MUST be formatted as: "Mon Jan 01 1990" - DONE 23 Mar 2023
  * 2. Fix the Logs API endpoint to send back the data as requested from the USERS collection
  * 3. Logs API endpoint should include limit, from & to query parameters
  * 4. Add additional Test cases to the Exercises Jest

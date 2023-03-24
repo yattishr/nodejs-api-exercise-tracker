@@ -22,7 +22,8 @@ router.post('/:id/exercises', createExercise)
 router.get('/:username/exercises', getExercisesByUser);
 
 // GET getLogsForUser '/:id/logs'
-router.get('/:id/logs', getLogsByUser);
+// router.get('/:id/logs', getLogsByUser);
+router.get('/:id/logs', getLogsForUser);
 
 router.get('/hello', getServerMessage);
 

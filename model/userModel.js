@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
     },
     createdate: {
         type: Date,
-        default: moment().format('YYYY MM DD'),
+        default: Date.now,
     },
     exercises: [
         {

@@ -13,18 +13,18 @@ const connectionStatus = connectMongo();
 let server;
 
 describe("POST /api/users/:id/exercises", () => {
-  // beforeAll(async () => {
-  //   await User.deleteOne({ username: "testuser" });
-  // });
+  beforeAll(async () => {
+    await User.deleteOne({ username: "testuser11" });
+  });
 
-  // afterAll(async () => {
-  //   await User.deleteOne({ username: "testuser" });
-  // });
+  afterAll(async () => {
+    await User.deleteOne({ username: "testuser11" });
+  });
 
   // Make a POST request to '/api/users'.
   it("should create a new user and add some exercises.", async () => {
     const exerciseArr = [];
-    const newUser = { username: "testuser" };
+    const newUser = { username: "testuser11" };
     const res = await request(app).post("/api/users").send(newUser);
     const userid = res.body._id;
     console.log(`logging new user id: ${userid}`);
@@ -33,38 +33,25 @@ describe("POST /api/users/:id/exercises", () => {
     const exercises = {
       description: "Exercise test 1",
       duration: 15,
-      date: "2023-03-18"
+      date: "2023-03-18",
     };
 
     // log exsercise object to console
     console.log(`logging exercise object: ${JSON.stringify(exercises)}`);
 
     // call POST endpoint to save Exercise
-    const exerciseRes = await request(app)
+    const response = await request(app)
       .post(`/api/users/${userid}/exercises`)
       .send(exercises);
-      console.log(`logging body data: ${JSON.stringify(res.body)}`);
-    expect(res.statusCode).toEqual(200);
-    // expect(res.body[0]).toBeInstanceOf(Array);
+    console.log(
+      `logging body data: ${JSON.stringify(response.body.exercises)}`
+    );
+    console.log(`body object is of type: ${typeof response.body.exercises}`);
+    expect(response.statusCode).toEqual(200);
+    expect(response.body).toHaveProperty("_id");
+    expect(response.body.exercises).toHaveLength(1);
+    expect(response.body.exercises).toBeInstanceOf(Array);
+    expect(response.body.exercises[0]).toHaveProperty("_id");
+    expect(response.body.exercises[0]).toHaveProperty("description");
   });
 });
-
-// GET User By Id from Db.
-// describe('GET /api/users/:id', () => {
-//     it('should return a user', async () => {
-//       const res = await request(app).get("/api/users/6400b4f16a486dc94cea6b67");
-//       console.log(`Found User...logging response: ${JSON.stringify(res.body)}`);
-//       console.log(`logging res status code: ${res.status}`);
-//       expect(res.statusCode).toEqual(200);
-//       expect(res.body).toHaveProperty("username");
-//       expect(res.body.username).toEqual("beatmaster");
-//       expect(res.body).toHaveProperty("_id");
-//       expect(res.body._id).toEqual("6400b4f16a486dc94cea6b67");
-//     });
-
-//     it('should return 400 if user is not found.', async () => {
-//       const res = await request(app).get("/api/users/6400b4f16a486dc94cea6b68");
-//       expect(res.statusCode).toEqual(400);
-//       expect(res.text).toEqual("Username cannot be found");
-//     });
-//   });
