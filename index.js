@@ -27,8 +27,8 @@ const connectionStatus = connectMongo();
 // Users API endpoint.
 app.use("/api/users", userRoutes);
 
-const listener = app.listen(process.env.PORT || 3000, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log("Your app is listening on port " + server.address().port);
 });
 
 module.exports = app;

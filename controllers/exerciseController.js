@@ -31,7 +31,6 @@ const createExercise = asyncHandler(async (req, res) => {
         date: formattedDate,
       });
       await user.save();
-      // res.status(200).json(user);
 
       res.status(200).json({
         _id: user._id,
@@ -47,8 +46,8 @@ const createExercise = asyncHandler(async (req, res) => {
       });
       console.log(`Successfully updated User record: ${user}`);
     } else {
-      res.status(401).send("Could not find that user");
-      console.log("Could not find that user");
+      res.status(400).send("Username cannot be found");
+      console.log("Username cannot be found");
     }
   } catch (error) {
     res.status(500).send(error.message, " : Unable to complete request.");
@@ -78,5 +77,6 @@ module.exports = {
  * 1. Fix date formatting. When saving & sending the dates from Exercises the date MUST be formatted as: "Mon Jan 01 1990" - DONE 23 Mar 2023
  * 2. Fix the Logs API endpoint to send back the data as requested from the USERS collection
  * 3. Logs API endpoint should include limit, from & to query parameters
- * 4. Add additional Test cases to the Exercises Jest
+ * 4. Add additional Test cases to the Exercises Jest - DONE 24 Mar 2023
+ * 5. When sending User/Exercise object back; include the _id field in the response object - DONE 24 Mar 2023.
  */
