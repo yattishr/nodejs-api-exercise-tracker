@@ -52,7 +52,7 @@ const getLogsForUser = asyncHandler(async (req, res) => {
   // find the username from the userId return status 400 if user was not found.
   const user = await User.findById({ _id: userId });
   if (user == null || user == undefined) {
-    res.status(400).send("User was not found.");
+    res.status(400).send("User was not found");
     return;
   }
 

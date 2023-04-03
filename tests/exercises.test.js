@@ -1,4 +1,4 @@
-// users.test.js
+// exercises.test.js
 const express = require("express");
 const request = require("supertest");
 const http = require("http");
