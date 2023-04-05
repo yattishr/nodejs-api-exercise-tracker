@@ -32,19 +32,41 @@ const createExercise = asyncHandler(async (req, res) => {
       });
       await user.save();
 
+      // OLD Code.
+      // res.status(200).json({
+      //   _id: user._id,
+      //   username: user.username,
+      //   exercises: user.exercises.map((exercise) => ({
+      //     username: user.username,
+      //     description: exercise.description,
+      //     duration: exercise.duration,
+      //     date: moment(exercise.date, "ddd MMM DD YYYY").format(
+      //       "ddd MMM DD YYYY"
+      //     ),
+      //     _id: exercise._id,
+      //   })),
+      // });
+
+      // NEW Code.
       res.status(200).json({
-        _id: user._id,
-        username: user.username,
-        exercises: user.exercises.map((exercise) => ({
-          username: user.username,
-          description: exercise.description,
-          duration: exercise.duration,
-          date: moment(exercise.date, "ddd MMM DD YYYY").format(
-            "ddd MMM DD YYYY"
-          ),
-          _id: exercise._id,
-        })),
-      });
+        exercises: [
+          {
+            _id: user._id,
+            username: user.username,
+            exercises: user.exercises.map((exercise) => ({
+              username: user.username,
+              description: exercise.description,
+              duration: exercise.duration,
+              date: moment(exercise.date, "ddd MMM DD YYYY").format(
+                "ddd MMM DD YYYY"
+              ),
+              _id: exercise._id,
+            })),
+          }
+        ]
+      })
+
+
       console.log(`Successfully updated User record: ${user}`);
     } else {
       res.status(400).send("Username cannot be found");
