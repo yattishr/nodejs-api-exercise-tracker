@@ -32,7 +32,7 @@ describe("GET /api/users/:id/logs", () => {
     });
 
 
-    // GET logs data where Exercise Date >= from date.
+    // GET logs data where Exercise Date <= to date.
     it("should return logs where Exercise Date <= to date", async() => {
         const response = await request(app).get("/api/users/6421bee3031f3b0033fc44ec/logs?to='2023-03-06'");
         console.log(`logging response object: ${JSON.stringify(response.body.exercises)}`);
@@ -59,7 +59,7 @@ describe("GET /api/users/:id/logs", () => {
         expect(response.body.log).toHaveLength(6);
     });
 
-      // GET logs data where Exercise Date >= from date && <= to date.
+      // GET logs data where limit = 3.
       it("should return logs where limit = 3", async() => {
         const response = await request(app).get("/api/users/6421bee3031f3b0033fc44ec/logs?limit=3");
         console.log(`logging response object: ${JSON.stringify(response.body.exercises)}`);

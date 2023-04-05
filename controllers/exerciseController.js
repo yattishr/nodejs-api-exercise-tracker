@@ -36,12 +36,13 @@ const createExercise = asyncHandler(async (req, res) => {
         _id: user._id,
         username: user.username,
         exercises: user.exercises.map((exercise) => ({
-          _id: exercise._id,
+          username: user.username,
           description: exercise.description,
           duration: exercise.duration,
           date: moment(exercise.date, "ddd MMM DD YYYY").format(
             "ddd MMM DD YYYY"
           ),
+          _id: exercise._id,
         })),
       });
       console.log(`Successfully updated User record: ${user}`);
