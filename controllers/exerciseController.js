@@ -33,31 +33,31 @@ const createExercise = asyncHandler(async (req, res) => {
       await user.save();
 
       // OLD Code.
-      res.status(200).json({
-        _id: user._id,
-        username: user.username,
-        exercises: user.exercises.map((exercise) => ({
-          username: user.username,
-          description: exercise.description,
-          duration: exercise.duration,
-          date: moment(exercise.date, "ddd MMM DD YYYY").format(
-            "ddd MMM DD YYYY"
-          ),
-          _id: exercise._id,
-        })),
-      });
-
-      // NEW Code 10 Apr 2023.
-      // return res.status(200).json({
+      // res.status(200).json({
       //   _id: user._id,
       //   username: user.username,
-      //   exercise: req.body.description,
-      //   duration: req.body.duration,
-      //   date: formattedDate,
+      //   exercises: user.exercises.map((exercise) => ({
+      //     username: user.username,
+      //     description: exercise.description,
+      //     duration: exercise.duration,
+      //     date: moment(exercise.date, "ddd MMM DD YYYY").format(
+      //       "ddd MMM DD YYYY"
+      //     ),
+      //     _id: exercise._id,
+      //   })),
       // });
+
+      // NEW Code 10 Apr 2023.
+      return res.status(200).json({
+        _id: user._id,
+        username: user.username,
+        exercise: req.body.description,
+        duration: parseInt(req.body.duration),
+        date: formattedDate,
+      });
       console.log(`Successfully updated User record: ${user}`);
     } else {
-      res.status(400).send("Username cannot be found");
+      return res.status(400).send("Username cannot be found");
       console.log("Username cannot be found");
     }
   } catch (error) {

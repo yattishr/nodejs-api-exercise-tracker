@@ -17,13 +17,13 @@ const createUser = asyncHandler(async (req, res) => {
     const username = req.body.username;
     console.log(`logging username: ${username}`);
     if(!username) {
-        res.status(400).type("text").send('Username cannot be blank')
+        return res.status(400).send('Username cannot be blank')
     }
 
     // check if user already exists
     const userExists = await User.findOne({ username })
     if(userExists) {
-        res.status(400).type("text").send(`${username} already exists`)
+       return res.status(400).send(`${username} already exists`)
     }
 
     try {
@@ -36,7 +36,7 @@ const createUser = asyncHandler(async (req, res) => {
       })
       console.log(`logging new user...${user}`);      
     } catch(err) {
-      res.status(400).type("text").send('Username data is not valid.');
+      return res.status(400).send('Username data is not valid.');
     }
 })
 
@@ -46,7 +46,7 @@ const getUserById = asyncHandler(async (req, res) => {
 
     // check if userId field is a valid Mongo ObjectId.
     if(!mongoose.Types.ObjectId.isValid(userId) || !userId) {
-        res.status(400).type("text").send("Invalid User Id field. User Id field cannot be a String or empty");        
+        res.status(400).send("Invalid User Id field. User Id field cannot be a String or empty");        
     }
 
     // find User with id
@@ -54,7 +54,7 @@ const getUserById = asyncHandler(async (req, res) => {
     if(user !== null && user !== undefined) {
         res.status(200).json(user);
     } else {
-        res.status(400).type("text").send("Username cannot be found");
+      return res.status(400).send("Username cannot be found");
     }
 })
 
